@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF 批量处理工具</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        .nav-item.active {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-right: 3px solid #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- 左侧导航栏 -->
+        <nav class="w-64 bg-white shadow-lg">
+            <div class="p-4 border-b border-gray-200">
+                <h1 class="text-xl font-bold text-blue-600">PDF 工具集</h1>
+                <p class="text-sm text-gray-500 mt-1">PDF 批量处理工具</p>
+            </div>
+            <div class="py-4">
+                <a href="#" class="nav-item flex items-center px-4 py-3 text-gray-700 active" onclick="switchTool('merger')">
+                    <i class="fas fa-object-group w-6"></i>
+                    <span>PDF 合并</span>
+                </a>
+                <a href="#" class="nav-item flex items-center px-4 py-3 text-gray-700" onclick="switchTool('splitter')">
+                    <i class="fas fa-cut w-6"></i>
+                    <span>PDF 拆分</span>
+                </a>
+            </div>
+            <div class="absolute bottom-0 w-64 p-4 border-t border-gray-200">
+                <p class="text-xs text-gray-500">纯浏览器端处理，文件不会上传到服务器</p>
+            </div>
+        </nav>
+
+        <!-- 右侧内容区 -->
+        <main class="flex-1">
+            <iframe id="content-frame" class="w-full h-full border-none"></iframe>
+        </main>
+    </div>
+
+    <script>
+        // 获取所有导航项
+        const navItems = document.querySelectorAll('.nav-item');
+        const contentFrame = document.getElementById('content-frame');
+
+        // 初始化显示合并工具
+        document.addEventListener('DOMContentLoaded', () => {
+            switchTool('merger');
+        });
+
+        // 切换工具函数
+        function switchTool(tool) {
+            // 更新导航项状态
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('onclick').includes(tool)) {
+                    item.classList.add('active');
+                }
+            });
+
+            // 更新 iframe 内容
+            const toolUrls = {
+                'merger': 'PDFMergerPro.html',
+                'splitter': 'PDFSplitterPro.html'
+            };
+
+            contentFrame.src = toolUrls[tool];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[Hotkey]
+# ^: 表示 Ctrl 键
+# !: 表示 Alt 键
+# #: 表示字母 Win键
+translate = !t
+polish = !p
+summarize = !s
+dinoxHotkey = !a
+
+[GUI]
+width = 500
+height = 300
+font_size = 10
+font_name = Microsoft YaHei

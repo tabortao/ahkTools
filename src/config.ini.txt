@@ -12,3 +12,6 @@ width = 500
 height = 300
 font_size = 10
 font_name = Microsoft YaHei
+
+[User]
+qq = xxx@qq.com

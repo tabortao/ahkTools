@@ -6,10 +6,10 @@ B := "((⏱️=2000))"  ; 要添加在其他标点符号后的字符串B
 C := "((⏱️=4000))"  ; 要添加在句号后的字符串C
 
 ; 从配置文件读取邮箱
-global g_userEmail := IniRead(g_configFile, "User", "email", "")
+global g_userEmail := IniRead(g_configFile, "User", "qq", "")
 
 ; 热字串定义 - 自动化输入，快捷输入邮箱
-:C:email::
+:C:qq::
 {
     SendText(g_userEmail)
 }

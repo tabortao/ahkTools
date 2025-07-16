@@ -2,18 +2,37 @@
     "dinox": {
         "token": "your dinox token"
     },
+    "default_model": "deepseek-ai/DeepSeek-V3",
     "models": {
     "qwen-plus": {
-      "url": "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/",
       "token": "your ai token",
       "model": "qwen-plus",
       "temperature": 0.7
     },
-    "deepseek/deepseek-chat-v3-0324:free": {
-      "url": "https://openrouter.ai/api/v1/chat/completions",
+    "gpt-4o": {
+      "url": "https://models.inference.ai.azure.com",
       "token": "your ai token",
-      "model": "deepseek/deepseek-chat-v3-0324:free",
+      "model": "gpt-4o",
       "temperature": 0.7
+    },
+    "Qwen/QwQ-32B": {
+      "url": "https://api.siliconflow.cn",
+      "token": "your ai token",
+      "model": "Qwen/QwQ-32B",
+      "temperature": 0.7
+    },
+    "deepseek-ai/DeepSeek-V3": {
+      "url": "https://api.siliconflow.cn",
+      "token": "your ai token",
+      "model": "deepseek-ai/DeepSeek-V3",
+      "temperature": 0.7
+    },    
+    "prompts": {
+        "translate": "你是一个英汉互译专家。如果输入的是中文，请将其翻译成英文；如果输入的是英文，请将其翻译成中文。请只输出翻译结果，不要包含任何解释或额外的文字。",
+        "polish": "你是一个文本润色专家。请对输入的文本进行润色和优化，使其更加流畅、专业和优雅。保持原文的核心意思不变，但可以适当调整表达方式。请只输出润色后的文本，不要包含任何解释或额外的文字。",
+        "summarize": "你是一个文本总结专家。请对输入的文本进行简明扼要的总结，突出重点内容。总结应当保持原文的主要观点，但要更加简洁。请只输出总结后的文本，不要包含任何解释或额外的文字。",
+        "assistant": "你是一个专业、友好的AI助手。你的任务是：\n1. 理解用户的问题并提供准确、有帮助的回答\n2. 使用清晰、易懂的语言\n3. 如果不确定答案，诚实地表示不知道\n4. 在合适的时候提供相关的建议或补充信息\n请直接回答用户的问题，不需要重复问题内容。"
     }
 }
 }

@@ -15,24 +15,31 @@ go build -ldflags="-s -w" -o deskAI.exe deskAI.go
 
 ### TODO:
 
+### v0.2.18(2025-07-16)
+- 支持设置默认模型
 
 ### v0.2.17
 - 重构日志系统并优化初始化流程
 - 将日志系统从 `ai` 包移动到 `utils` 包，统一日志文件路径和格式。
 - 优化 `ahkTools.ahk` 的初始化流程，将全局变量和日志系统的初始化封装到函数中，提高代码的可维护性和可读性。
+
 ### v0.2.16
 - 配置文件中增加默认模型设置，方便用户选用不同的AI模型。
 - 修改 createLLM 函数返回类型为 llms.Model
 - 删除 result.txt 文件并优化结果输出逻辑
 - 添加 UTF-8 编码设置和日志记录功能
 - 优化 ProcessText 函数，简化命令执行和输出处理
+
 ### v0.2.15
 - 调用github.com/tmc/langchaingo的LLM，实现了调用openai兼容的API请求。
 - AI回答命令行中年可以流式输出。
+
 ### v0.2.14
 - 优化了代码结果，便于后续维护。
+
 ### v0.2.13
 - deskAI增加了PDF提取和合并功能。
+
 ### v0.2.12
 - 邮箱快捷输入，通过读取config.ini来实现。
 
@@ -63,7 +70,6 @@ go build -ldflags="-s -w" -o deskAI.exe deskAI.go
 - 优化了代码结构，提高了代码的可读性和可维护性。
 - 增加deskAI，实现go语言发送文本到dinox。
 
-
 ### v0.2.4
 - 优化显示GUI界面
 
@@ -73,6 +79,7 @@ go build -ldflags="-s -w" -o deskAI.exe deskAI.go
 
 ### v0.2.2
 - 优化ai_tool.exe文件大小，减小go程序的体积
+
 ### v0.2.1
 - 修复调用Sublime Text文件路径有误的问题
 ```bash

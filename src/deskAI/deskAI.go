@@ -88,10 +88,16 @@ func handleCommand(command string, args []string, modelName *string) (string, er
 
 // 获取默认模型名称
 func getDefaultModel() string {
-	configFile := "config.json"
+	execPath, err := os.Executable()
+	if err != nil {
+		return "deepseek-ai/DeepSeek-V3"
+	}
+	execDir := filepath.Dir(execPath)
+	configFile := filepath.Join(execDir, "config.json")
+
 	data, err := os.ReadFile(configFile)
 	if err != nil {
-		return "qwen-plus"
+		return "deepseek-ai/DeepSeek-V3"
 	}
 
 	var config struct {
@@ -99,11 +105,11 @@ func getDefaultModel() string {
 	}
 
 	if err := json.Unmarshal(data, &config); err != nil {
-		return "qwen-plus"
+		return "deepseek-ai/DeepSeek-V3"
 	}
 
 	if config.DefaultModel == "" {
-		return "qwen-plus"
+		return "deepseek-ai/DeepSeek-V3"
 	}
 	return config.DefaultModel
 }
@@ -121,9 +127,12 @@ func main() {
 	command := flag.Arg(0)
 	args := flag.Args()[1:]
 
-	_, err := handleCommand(command, args, modelName)
+	result, err := handleCommand(command, args, modelName)
 	if err != nil {
 		fmt.Printf("错误: %v\n", err)
 		os.Exit(1)
+	}
+	if result != "" {
+		fmt.Print(result)
 	}
 }

@@ -13,10 +13,6 @@ global g_userEmail := IniRead(g_configFile, "User", "email", "")
 {
     SendText(g_userEmail)
 }
-:C:qq::
-{
-    SendText(g_userEmail)
-}
 
 ; 完成
 ::wc::✅

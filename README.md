@@ -2,6 +2,8 @@
 
 ahkTools是一个基于AutoHotkey v2.0和Go语言开发的AI文本处理工具，提供了便捷的文本翻译、润色等功能，支持全局热键和图形界面操作。
 
+![ahkTools UI](./docs/Images/UI.jpg)
+
 ## 主要功能
 
 ### 1. AI文本处理

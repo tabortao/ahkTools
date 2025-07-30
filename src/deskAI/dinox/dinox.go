@@ -49,16 +49,19 @@ func getToken() string {
 }
 
 func DinoxPost(content string) error {
-	url := "https://dinoai.chatgo.pro/openapi/text/input"
+	url := "https://aisdk.chatgo.pro/api/openapi/createNote"
 	method := "POST"
 	token := getToken()
 	if token == "" {
 		return fmt.Errorf("token not found in config.json")
 	}
 
+	// 构建包含 title、content、tags 的 JSON body，title 和 tags 默认空
 	payload := strings.NewReader(`{
-		"content": "` + content + `"
-	}`)
+			   "title": "",
+			   "content": "` + content + `",
+			   "tags": []
+	   }`)
 
 	client := &http.Client{}
 	req, err := http.NewRequest(method, url, payload)

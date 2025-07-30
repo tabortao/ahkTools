@@ -62,6 +62,7 @@ CopySource(*) {
 ; 清空函数
 ClearSource(*) {
     g_editSource.Value := ""
+    g_editTarget.Value := ""
 }
 CopyTarget(*) {
     A_Clipboard := g_editTarget.Value

@@ -4,9 +4,9 @@ cd f:\Code\EfficientCode\AutoHotkey\ahkTools
 go mod tidy
 # go mod init ahktools
 go get gopkg.in/ini.v1
-go build -o ai_tool.exe ai_tool.go
+go build -o deskAI.exe deskAI.go
 # 优化编译文件大小，减小go程序的体积
-go build -ldflags="-s -w" -o ai_tool.exe ai_tool.go 
+go build -ldflags="-s -w" -o deskAI.exe deskAI.go 
 
 go build -o deskAI.exe deskAI.go
 go build -ldflags="-s -w" -o deskAI.exe deskAI.go
@@ -14,6 +14,10 @@ go build -ldflags="-s -w" -o deskAI.exe deskAI.go
 
 
 ### TODO:
+
+### v0.2.19(2025-07-30)
+- 更新dinox常见笔记API
+- 清空按钮同时清除处理结果
 
 ### v0.2.18(2025-07-16)
 - 支持设置默认模型
